@@ -3,6 +3,7 @@ package com.reservationapp.service;
 import com.reservationapp.entity.Bus;
 import com.reservationapp.payload.BusDto;
 import com.reservationapp.repository.BusRepository;
+import com.reservationapp.repository.DriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +12,12 @@ public class BusService {
     @Autowired
     private BusRepository busRepository;
 
+    @Autowired
+    private DriverRepository driverRepository;
+
     public BusDto addBus(BusDto busDto){
         Bus bus = mapToEntity(busDto);
+        driverRepository.save(busDto.getDriver());
         Bus savedBus = busRepository.save(bus);
         return mapToDto(savedBus);
     }
@@ -34,6 +39,7 @@ public class BusService {
         bus.setPrice(busDto.getPrice());
         bus.setTotalSeats(busDto.getTotalSeats());
         bus.setAvailableSeats(busDto.getAvailableSeats());
+        bus.setDriver(busDto.getDriver());
         return bus;
     }
 
@@ -53,6 +59,7 @@ public class BusService {
         busDto.setPrice(bus.getPrice());
         busDto.setTotalSeats(bus.getTotalSeats());
         busDto.setAvailableSeats(bus.getAvailableSeats());
+        busDto.setDriver(bus.getDriver());
         return busDto;
     }
 }

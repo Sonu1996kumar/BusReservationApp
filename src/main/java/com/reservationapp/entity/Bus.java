@@ -17,6 +17,7 @@ public class Bus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long busId;
+
     @Column(name = "bus_number",unique = true)
     private String busNumber;
     private String busType;
@@ -30,4 +31,8 @@ public class Bus {
     private double price;
     private int totalSeats;
     private int availableSeats;
+
+    @OneToOne
+    @JoinColumn(name = "driver_id")
+    private Driver driver;
 }
