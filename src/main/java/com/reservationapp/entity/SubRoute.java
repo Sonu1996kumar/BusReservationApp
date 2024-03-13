@@ -24,9 +24,19 @@ public class SubRoute {
     private String fromTime;
     private String toTime;
 
-    @Column(name="route_id",nullable=false)
 
+    @Column(name="route_id",nullable=false)
     private long routeId;
+    private long busId;
+
+
+    public long getBusId() {
+        return busId;
+    }
+
+    public void setBusId(long busId) {
+        this.busId = busId;
+    }
 
     public Long getId() {
         return id;
