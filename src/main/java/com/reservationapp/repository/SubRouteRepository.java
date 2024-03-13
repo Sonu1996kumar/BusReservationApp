@@ -1,6 +1,5 @@
 package com.reservationapp.repository;
 
-import com.reservationapp.entity.Route;
 import com.reservationapp.entity.SubRoute;
 import org.springframework.data.jpa.repository.JpaRepository;
 

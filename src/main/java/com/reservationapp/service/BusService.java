@@ -3,7 +3,7 @@ package com.reservationapp.service;
 import com.reservationapp.entity.Bus;
 import com.reservationapp.payload.BusDto;
 import com.reservationapp.repository.BusRepository;
-import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class BusService {
     @Autowired
     private BusRepository busRepository;
 
-    @Transactional    //----Eska use hmlog esliye krte h kyu ki ye ek hi transection krta h ek baar me
+    //@Transactional    //----Eska use hmlog esliye krte h kyu ki ye ek hi transection krta h ek baar me
     public void addBus(BusDto busDto) {
 
 

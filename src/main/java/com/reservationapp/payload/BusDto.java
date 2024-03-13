@@ -1,10 +1,6 @@
 package com.reservationapp.payload;
 
 
-
-
-import com.reservationapp.entity.SubRoute;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
